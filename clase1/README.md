@@ -6,8 +6,6 @@ Introducción al paradigma lógico y Prolog
 - `halt.` -> Salgo
 - `make.` -> Hago cambios en Visual Studio Code, para refrescar
 
-
-
 ## Paradigma Lógico
 
 El paradigma lógico es un enfoque de programación que se basa en la lógica formal y el razonamiento deductivo. En este paradigma, se describe el problema a resolver utilizando un conjunto de reglas lógicas y hechos, y se utiliza un motor de inferencia para derivar conclusiones lógicas a partir de ellos.
@@ -16,7 +14,7 @@ En lugar de especificar cómo se debe resolver un problema paso a paso, como en 
 
 ## Definir el conocimiento
 
-El código que escribamos en el archivo va a ser una base de conocimiento, que define el alcance, lo que forma parte de nuestro universo de cosas conocidas y lo que no.
+El código que escribamos en el archivo va a ser una **base de conocimiento**, que define el alcance, lo que forma parte de nuestro universo de cosas conocidas y lo que no.
 
 ```Prolog
 pastas(ravioles).
@@ -31,7 +29,9 @@ Los individuos son los elementos que forman parte del universo posible de los pr
 
 ## Consulta
 
-La inferencia es el proceso por el cual se derivan conclusiones a partir de premisas.
+La inferencia es el proceso por el cual se derivan conclusiones a partir de premisas. Las consultas es lo que hacemos para probar nuestra programa. Una consulta no devuelve nada, sino que tiene un valor de verdad.
+
+Puedo consultar si determinados individuos cumplen una propiedad o una relación (consulta individual) o bien puedo preguntar si existe algún individuo que la cumpla (consulta existencial).
 
 ```Prolog
 ? pastas(ravioles).
@@ -57,7 +57,7 @@ false
 false
 ```
 
-Vamos a tomar todo lo desconocido como falso.
+**Vamos a tomar todo lo desconocido como falso.**
 
 Vamos a llamar un **hecho** a una afirmación codificada en la base de conocimiento. Cada hecho es una **clausula**.
 
@@ -69,7 +69,7 @@ Los predicados que tienen mas de un argumento se llaman poliádicos, ya que expr
 
 ## Definición por extensión
 
-Un conjunto de hechos para el mismo predicado forman la definición por extensión del predicado.
+Un conjunto de hechos para el mismo predicado forman la definición por extensión del predicado. En mayúscula prolog crea una variable.
 
 Ej: Animales = "Tigre", "Oso", "Elefante"
 
@@ -87,3 +87,20 @@ Este tipo de definición requiere que enumeremos todos los elementos del conjunt
 En nuestra primera aproximación al Paradigma Lógico, hemos visto que las soluciones que vamos a encarar son declarativas: escribimos conocimiento partiendo de las características de los individuos o de las relaciones entre ellos en una base de conocimientos. Luego podemos realizar diferentes consultas delegando al motor de inferencia la forma en que finalmente lo resuelve.
 
 La base de conocimientos compone todo el universo conocido, todo lo que está fuera no se puede probar que existe, por lo tanto se asume falso según el Principio de Universo Cerrado.
+
+- Individuo
+  - Individuo simple 
+    - Átomo
+    - Numero
+  - Individuo compuesto
+    - Lista
+    - Functor
+  - Predicado
+    - Propiedad
+    - Relación
+  - Clausula
+    - Hecho
+    - Regla
+  - Consulta
+    - Individual
+    - Existencial
