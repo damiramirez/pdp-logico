@@ -49,3 +49,5 @@ casiIncomible(Elemento1, Elemento2):-
   tieneGradoDeVeneno(Elemento1, Valor1),
   tieneGradoDeVeneno(Elemento2, Valor2),
   21 is Valor1 + Valor2.
+
+siguiente(N, Siguiente):- Siguiente is N + 1.

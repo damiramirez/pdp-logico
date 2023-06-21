@@ -1,5 +1,7 @@
 # Clase 1
 
+Hechos, consultas y reglas. Principio de universo cerrado. Unificación. Múltiples respuestas. Pattern Matching.	
+
 Introducción al paradigma lógico y Prolog
 
 - `swipl main.pl` -> ejecuto archivo
@@ -59,7 +61,24 @@ false
 
 **Vamos a tomar todo lo desconocido como falso.**
 
-Vamos a llamar un **hecho** a una afirmación codificada en la base de conocimiento. Cada hecho es una **clausula**.
+La base de conocimientos compone todo el universo conocido, todo lo que está fuera no se puede probar que existe, por lo tanto se asume falso según el Principio de Universo Cerrado.
+
+- Individuo
+  - Individuo simple 
+    - Átomo
+    - Numero
+  - Individuo compuesto
+    - Lista
+    - Functor
+  - Predicado
+    - Propiedad
+    - Relación
+  - Clausula
+    - Hecho
+    - Regla
+  - Consulta
+    - Individual
+    - Existencial
 
 ## Predicados poliádicos
 
@@ -82,25 +101,26 @@ animal(elefante).
 
 Este tipo de definición requiere que enumeremos todos los elementos del conjunto.
 
-## Resumen
+Si quiero saber si existe cierto elemento que cumpla con el predicado, puedo usar la variable anónima `_`. 
 
-En nuestra primera aproximación al Paradigma Lógico, hemos visto que las soluciones que vamos a encarar son declarativas: escribimos conocimiento partiendo de las características de los individuos o de las relaciones entre ellos en una base de conocimientos. Luego podemos realizar diferentes consultas delegando al motor de inferencia la forma en que finalmente lo resuelve.
+En cambio si uso un nombre de variable en mayúscula, me va a mostrar todos los elementos del universo que cumplan la relación. 
 
-La base de conocimientos compone todo el universo conocido, todo lo que está fuera no se puede probar que existe, por lo tanto se asume falso según el Principio de Universo Cerrado.
+## Tipos de consultas
 
-- Individuo
-  - Individuo simple 
-    - Átomo
-    - Numero
-  - Individuo compuesto
-    - Lista
-    - Functor
-  - Predicado
-    - Propiedad
-    - Relación
-  - Clausula
-    - Hecho
-    - Regla
-  - Consulta
-    - Individual
-    - Existencial
+- Determinar si una relación específica se satisface o no, instanciando todos los argumentos -> Verifica si es `true` o `false`.
+  ```Prolog
+  come(juan, ravioles).
+  pastas(bohio).
+  pastas(_).
+  ```
+- Consultas existenciales, permiten conocer los individuos que satisfacen una relación, en ese caso alguno de los argumentos debe estar libre (debe ser una variable). 
+  ```Prolog
+  come(juan, Comida).
+  come(Persona, Comida).
+  pastas(Pasta).
+  ```
+  
+## Reglas
+Una regla tiene uno o más antecedentes: en este caso es uno solo, humano/1 y un consecuente.
+Si se cumplen los antecedentes, entonces se satisface el consecuente. Lo que en lógica se escribe p => q, en sintaxis PROLOG se escribe al revés:
+q :- p. 
