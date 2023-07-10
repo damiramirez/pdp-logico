@@ -2,7 +2,7 @@
 
 Cuantificación universal - forall.
 
-## For all
+## Forall
 
 Se utiliza para expresar una consulta universal. Básicamente, permite verificar si una condición es verdadera para todos los valores posibles de una variable antes de considerar una afirmación como verdadera. `forall(Condicion, Accion)`
 
